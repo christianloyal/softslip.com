@@ -1,0 +1,18 @@
+﻿.LinkButton {
+    background: lightgreen;
+    color: #fff;
+    font-size: 22px;
+    font-family: Calibri;
+    padding: 6px 30px;
+    border: none;
+    border-bottom: 3px solid #925b08;
+    border-radius: 5px;
+}
+
+.LinkButton {
+    background: darkgreen;
+    border-bottom: 3px solid Lightgreen;
+}
+.button:focus{
+    outline:none;
+}
