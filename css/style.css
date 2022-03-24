@@ -1377,6 +1377,14 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #13a456;
 }
 
+form{
+display:flex;
+flex-direction: column;
+width: 80%;
+margin:auto;
+
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
