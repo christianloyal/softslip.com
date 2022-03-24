@@ -9,9 +9,9 @@ function sendEmail(e){
 
 Email.send({
     Host : "smtp.gmail.com",
-    Username : "christianloyal2@gmail.com",
-    Password : "nnennaya",
-    To : 'christianloyal2@gmail.com',
+    Username : "",
+    Password : "",
+    To : '',
     From : document.getElementById("email").value,
     Subject : "New Contact Form Enquiry",
     Body : "Name: " + document.getElementById("name").value
