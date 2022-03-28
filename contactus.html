@@ -2,7 +2,7 @@
 
 <html>
 <head runat="server">  
-   <meta charset="utf-8">
+     <meta charset="utf-8">
   <title>Soft Slip</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
@@ -83,7 +83,7 @@
                 <div class="carousel-background"><img src="img/intro-carousel/1.jpg" alt=""></div>
                 <div class="carousel-container">
                   <div class="carousel-content">
-                   <h2>Welcome...</h2>
+                    <h2>Welcome...</h2>
                     <p>Soft slip is a special service, specifically designed for internal money deposit and withdrawal methods within the bank sector.</p>
                     <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
                   </div>
@@ -152,7 +152,7 @@
   
     <main id="main">
   
-   <!--==========================
+     <!--==========================
       Featured Services Section
     ============================-->
     <section id="featured-services">
@@ -224,35 +224,69 @@
           <div class="form">
              <div id="sendmessage">Your message has been sent. Thank you!</div>
              <div id="errormessage"></div>
-             <form action="" method="post" role="form" class="contactForm" enctype="text/plain">
+
+            <!-- <form action="" method="post" role="form" class="contactForm" enctype="text/plain">-->
+              <form action="https://formsubmit.co/52a9e1c771ad8ba30b71fc8ce1278528" method="POST">
+                <!-- Honeypot -->
+                <input type="text" name="_honey" style="display: none;">
+
+                 <!-- Disable Captcha -->
+               <input type="hidden" name="_captcha" value="false">
+
+               <input type="hidden" name="_next" value="https://github.com/christianloyal/softslip.com/thankcontact.html">
+
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 15 chars" />
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 15 chars" required>
                   <div class="validation"></div>
                 </div>
                 <div class="form-group col-md-6">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" required>
                   <div class="validation"></div>
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" required>
                 <div class="validation"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" id="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <textarea class="form-control" name="message" id="message" rows="5"  data-msg="Please write something for us" placeholder="Message" required></textarea>
                 <div class="validation"></div>
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
+
+
+
+         <!--    <form action="" method="post" role="form" class="contactForm" enctype="text/plain">
+               <div class="form-row">
+                 <div class="form-group col-md-6">
+                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 15 chars" />
+                   <div class="validation"></div>
+                 </div>
+                 <div class="form-group col-md-6">
+                   <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                   <div class="validation"></div>
+                 </div>
+               </div>
+               <div class="form-group">
+                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                 <div class="validation"></div>
+               </div>
+               <div class="form-group">
+                 <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                 <div class="validation"></div>
+               </div>
+               <div class="text-center"><button type="submit">Send Message</button></div>
+             </form>-->
            </div>
    
          </div> 
    
        </section><!-- #contact -->
 
-        <!-- Uncomment below if you wan to use dynamic maps -->
-      
+        <!-- Uncomment below if you want to use dynamic maps -->
+  
       <div class="map-responsive">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.7892157823458!2d3.26466801409455!3d6.673019323260022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b975d149f883f%3A0x40463e1436dde786!2s63%20Tokura%20St%2C%20Alagbado%2C%20Lagos!5e0!3m2!1sen!2sng!4v1622083110476!5m2!1sen!2sng" width="600" height="400" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
@@ -304,8 +338,8 @@
           <div class="col-lg-3 col-md-6 footer-newsletter">
             <h4>Our Newsletter</h4>
             <p>Be the first to get informations about our services directly from us through our website, Only when you subscribe with us.</p>
-            <form1 action="mailto:christianloyal2@gmail.com" method="post">
-              <input type="email" name="email"><input type="submit"  value="Subscribe">
+            <form1 action="" method="POST">
+              <input type="email" name="email"  placeholder="Your@email.com"><input type="submit"  value="Subscribe">
             </form> 
           </div>
 
@@ -346,9 +380,11 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
-   
-    <!-- My ContactForm Connection Here -->
-   <script src="/conta.js"></script>
+
+  <!--<script src="https://smtpjs.com/v3/smtp.js"></script>-->
+
+   <!-- My ContactForm Connection Here -->
+ <!--   <script src="/conta.js"></script>-->
 
 </body>
 </html>
