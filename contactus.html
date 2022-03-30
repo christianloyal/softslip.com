@@ -226,29 +226,29 @@
              <div id="errormessage"></div>
 
             <!-- <form action="" method="post" role="form" class="contactForm" enctype="text/plain">-->
-              <form action="https://formsubmit.co/52a9e1c771ad8ba30b71fc8ce1278528" method="POST">
-                              
-             <!--  <input type="hidden" name="_next" value="https://github.com/christianloyal/softslip.com/thankcontact.html">-->
+              <form action="" method="POST">
+                <!-- Honeypot -->
+               <!-- <input type="text" name="_honey" style="display: none;"> -->
 
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <input type="text" name="name" class="form-control" id="Name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 15 chars" required>
+                  <input type="text" name="Name" class="form-control" id="Name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 15 chars" required>
                   <div class="validation"></div>
                 </div>
                 <div class="form-group col-md-6">
-                  <input type="email" class="form-control" name="email" id="Email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" required>
                   <div class="validation"></div>
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="Subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" required>
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" required>
                 <div class="validation"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" id="Message" rows="5"  data-msg="Please write something for us" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="message" id="message" rows="5"  data-msg="Please write something for us" placeholder="Message" required></textarea>
                 <div class="validation"></div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit" id="submit">Send Message</button></div>
             </form>
 
 
@@ -376,10 +376,93 @@
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
 
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+  (function() {
+  emailjs.init("mplBD8Y-TfhOlUhgp");
+  })();
+  </script>
+
+<!-- Sweet Alert js -->
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+ /**
+  
+User ID_mplBD8Y-TfhOlUhgp
+
+Access Token =Qwh_RoQ7unBEsc0kGYQdC
+  
+   */   
+
+  function validate(){
+     let name = document.getElementById(".Name")
+     let email = document.getElementById(".email")
+     let subject = document.getElementById(".subject")
+     let msg = document.getElementById(".message")
+     let submit = document.getElementById(".submit")
+
+     submit.addEventListener("click",(e)=>{
+       e.preventDefault()
+
+       if(!sendmail(name.value, email.value, subject.value, msg.value)){       
+        error()
+        return;
+       }
+
+       sendmail(name.value, email.value, subject.value, msg.value)
+       success();
+
+     })
+
+}
+validate()
+
+function sendmail(name, email, subject, msg){
+
+  emailjs.send("service_e9c442a","template_3w335d9",{
+        subject: subject,
+        email: email,
+        Message: msg,
+        Name: name,
+});
+  
+}
+
+
+
+function success(){
+
+      swal({
+      title: "Good job!",
+      text: "Your message has been sent. Thank you!",
+      icon: "success",
+      button: "Ok!",
+    });
+}
+ 
+
+ function error(){
+
+      swal({
+      title: "Whoops!",
+      text: "Something went wrong,Message could not be sent!",
+      icon: "error",
+      button: "Ok!",
+      });
+}
+
+  </script>
+
+
+
   <!--<script src="https://smtpjs.com/v3/smtp.js"></script>-->
 
    <!-- My ContactForm Connection Here -->
  <!--   <script src="/conta.js"></script>-->
+
 
 </body>
 </html>
