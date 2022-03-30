@@ -226,7 +226,7 @@
              <div id="errormessage"></div>
 
             <!-- <form action="" method="post" role="form" class="contactForm" enctype="text/plain">-->
-              <form id="contactForm" method="POST">
+             <form action="" method="post" role="form" class="contactForm" enctype="text/plain">
                 <!-- Honeypot -->
                <!-- <input type="text" name="_honey" style="display: none;"> -->
 
@@ -375,93 +375,6 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
-
-
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="text/javascript">
-  (function() {
-  emailjs.init("mplBD8Y-TfhOlUhgp");
-  })();
-  </script>
-
-<!-- Sweet Alert js -->
-
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-<script>
- /**
-  
-User ID_mplBD8Y-TfhOlUhgp
-
-Access Token =Qwh_RoQ7unBEsc0kGYQdC
-  
-   */   
-
-  function validate(){
-     let name = document.getElementById(".Name")
-     let email = document.getElementById(".email")
-     let subject = document.getElementById(".subject")
-     let msg = document.getElementById(".message")
-     let submit = document.getElementById(".submit")
-
-     submit.addEventListener("click",(e)=>{
-       e.preventDefault()
-
-       if(!sendmail(name.value, email.value, subject.value, msg.value)){       
-        error()
-        return;
-       }
-
-       sendmail(name.value, email.value, subject.value, msg.value)
-       success();
-
-     })
-
-}
-validate()
-
-function sendmail(name, email, subject, msg){
-
-  emailjs.send("service_e9c442a","template_3w335d9",{
-        subject: subject,
-        email: email,
-        Message: msg,
-        Name: name,
-});
-  
-}
-
-
-
-function success(){
-
-      swal({
-      title: "Good job!",
-      text: "Your message has been sent. Thank you!",
-      icon: "success",
-      button: "Ok!",
-    });
-}
- 
-
- function error(){
-
-      swal({
-      title: "Whoops!",
-      text: "Something went wrong,Message could not be sent!",
-      icon: "error",
-      button: "Ok!",
-      });
-}
-
-  </script>
-
-
-
-  <!--<script src="https://smtpjs.com/v3/smtp.js"></script>-->
-
-   <!-- My ContactForm Connection Here -->
- <!--   <script src="/conta.js"></script>-->
 
 
 </body>
