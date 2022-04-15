@@ -36,6 +36,12 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet"/>
 
+  <style>
+    .combobox{
+    padding:8px;
+    }
+    </style>
+
 </head>
 
 <body>
@@ -58,37 +64,53 @@
 
   <br>
   <center>
-  <form class="gform pure-form pure-form-stacked" method="POST" data-email=""
-  action="">
+  <form class="gform pure-form pure-form-stacked" method="POST" data-email="christianloyal2@gmail.com" action="https://script.google.com/macros/s/AKfycbxCeQpWJg2Nz2jLBEPyiEs4LwDOXZPBebZDwLuihOG-tltiJdkU2jfXslckfIgvhoU/exec">
     <div class="form-elements"><br>
       <div style="background:none;border:1px solid gray;border-radius: 30px;width: 400px;padding-top: 15px;padding-bottom: 40px;padding-left: 20px;padding-right: 20px;">
         <b class="content-head" style="font-size: 2.3em;">Request For An Invoice</b>
         <br><br>
          <b style="margin-left: -200px;font-size: 1.3em;">Bank - Name</b><br>
-        <input type="text" name="name" required="" style="font-size: 1em;width: 300px;"/><br>
+        <input type="text" name="Name" required="" style="font-size: 1em;width: 300px;"/><br>
 
         <b style="margin-left: -255px;font-size: 1.3em;">Email</b><br>
-        <input type="email" name="email" required="" style="font-size: 1em;width: 300px;"/><br>
+        <input type="email" name="Email" required="" style="font-size: 1em;width: 300px;"/><br>
 
          <b style="margin-left: -255px;font-size: 1.3em;">Phone</b><br>
-         <input type="number"  name="phone" required="" style="font-size: 1em;width: 300px;"/><br>
+         <input type="number"  name="Phone" required="" style="font-size: 1em;width: 300px;"/><br>
 
          <b style="margin-left: -180px;font-size: 1.3em;">Bank Address</b><br>
-         <input type="text" name="name" required="" style="font-size: 1em;width: 300px;"/><br>
+         <input type="text" name="Bank&nbsp;Address" required="" style="font-size: 1em;width: 300px;"/><br>
       
-        <b style="margin-left: -80px;font-size: 1.3em;">Specify service Below</b><br>
-        <textarea  name="message" rows="5" cols="22" required="" style="font-size: 1.3em;width: 300px;"></textarea><br>
-    
-        <button style="float: right;width: 100px;height: 27px;font-size: 1.1em;margin-right: 48px;">
+        <b style="margin-left: -180px;font-size: 1.3em;">Specify service</b><br>
+       <!-- <textarea  name="Message" rows="5" cols="22" required="" style="font-size: 1.3em;width: 300px;"></textarea> -->
+       <select class="combobox" name="Message" style="font-size: 1em;width: 300px;">
+        <option value="Select">Select....</option>
+        <option value="php">php</option>
+        <option value="html">html</option>
+        <option value="javascript">Javascript</option>
+        <option value="CPP">CPP</option>
+        <option value="Python">Python</option>
+        <option value="vue">Vue</option>
+        <option value="7">Cobobl</option>
+        <option value="9">TEXT 4</option>
+        <option value="CSS Text">CSS TEXT</option>
+        <option value="responsive">Responsive</option>
+        <option value="script">scripting</option>
+        <option value="preprocessors">Saas, Less</option>
+        <option value="csharp">C Sharp</option></select> <br><br>
+        
+        <button style=" background-color: #4CAF50; /* Green */ border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;">
         send</button><br>
       </div>
     </div>
 
     <!-- Thankyou_message --><br>
+    <center>
     <div class="thankyou_message" style="display:none;background:none;border:8px solid gray;border-radius: 40px;width: 400px;padding-top: 15px;padding-bottom: 40px;padding-left: 20px;padding-right: 20px;"><br><br>
       <h1>Thanks for contacting us!</h1>
       <h1>*******</h1>
     </div>
+  </center>
   </form>
   <script data-cfasync="false" type="text/javascript">
     
@@ -139,7 +161,7 @@
 
     // add form-specific values into the data
     formData.formDataNameOrder = JSON.stringify(fields);
-    formData.formGoogleSheetName = form.dataset.sheet || "sheetname"; // default sheet name
+    formData.formGoogleSheetName = form.dataset.sheet || "Sheet1"; // default sheet name
     formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
 
     console.log(formData);
